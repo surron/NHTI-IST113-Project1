@@ -19,12 +19,11 @@ body{
 	border-style: solid;
 	border-color: #c0c0c0; /*silver */
 	border-width: 5px;
-	text-align:center;
+	text-align: center;
 }
 .tiles{
 	background-color: rgba(0,0,200,0.2);
 	margin: auto;
-	width: 75px;
 	height: 75px;
 	
 	border-radius: 10px 20px;
@@ -33,5 +32,17 @@ body{
 	border-color: rgba(0,0,200,0.5);
 	border-width: 3px;
 	
-	text-align: center;
+	text-align: center ;
+}
+.tiles .recipes{
+	width: 100px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.tiles .tips{
+	width: 75px;
+	position: absolute;
+	left: 0;
+	top: 0;
 }

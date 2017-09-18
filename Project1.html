@@ -5,14 +5,21 @@
 		<link rel="stylesheet" href="ProjectStyles.css"> 
 	</head>
 	<body>
-		<div id="tileBanner">
-			<button class="tiles tips" >
+		<div id="tileBanner" >
+			<button class="tiles tips" style="display:inline-block; vertical-align:middle"> <!-- http://phrogz.net/CSS/vertical-align/index.html a True life saver on Valign stuff-->
 				Food for Thought
 			</button>
-			<button class="tiles recipes" >
-				Timer
-				
-				timer
+			<button class="tiles recipes" style="display:inline-block; vertical-align:middle">
+				Got Some Time?<br>
+				Here's a Recipe
+				<div>
+					<select name="Price Range">
+					<option value="any">Any Recipe</option>
+					<option value="5">Less than $5</option>  <!-- examples -->
+					<option value="8">Less than $8</option>
+					<option value="10">Less than $10</option>
+					</select>
+				</div>	
 			</button>
 			
 		</div> <!-- Opaque tiles banner? bar at top of page -->
