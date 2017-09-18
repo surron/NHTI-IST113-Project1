@@ -1,0 +1,8 @@
+head{
+}
+body{
+	background-color: #E3E0D1;
+	background-image: url("fridge1.png"); /* https://pixabay.com/en/fridge-refrigerator-vintage-fridge-1597106/ */
+	background-repeat: no-repeat;
+	background-position: center top;
+}
