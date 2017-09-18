@@ -7,3 +7,11 @@ body{
 	background-repeat: no-repeat, repeat ;
 	background-position: center top, left top;
 }
+#tileBanner{
+	margin: auto;
+	background-color: rgba(255,255,255, 0.5);
+	width: 80%;
+	height: 80px;	
+}
+#tiles{
+}
