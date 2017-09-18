@@ -20,5 +20,17 @@ body{
 	border-color: #c0c0c0; /*silver */
 	border-width: 5px;
 }
-#tiles{
+.tiles{
+	background-color: rgba(0,0,200,0.2);
+	margin: auto;
+	width: 60px;
+	height: 60px;
+	
+	border-radius: 10px 20px;
+	
+	border-style: solid;
+	border-color: rgba(0,0,200,0.5);
+	border-width: 3px;
+	
+	text-align: center;
 }
