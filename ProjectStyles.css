@@ -1,8 +1,9 @@
 head{
 }
 body{
-	background-color: #E3E0D1;
-	background-image: url("fridge1.png"); /* https://pixabay.com/en/fridge-refrigerator-vintage-fridge-1597106/ */
-	background-repeat: no-repeat;
-	background-position: center top;
+	background-image: url("fridge1.png"), url("flowers.png"); /* https://pixabay.com/en/fridge-refrigerator-vintage-fridge-1597106/ <-- free */
+	 /* https://cdn2.bigcommerce.com/server2800/own6dl/images/stencil/2048x2048/products/2937/8905/IMG_1650_edited-1__14588.1499291766.jpg?c=2 <---fair use */
+	
+	background-repeat: no-repeat, repeat ;
+	background-position: center top, left top;
 }
