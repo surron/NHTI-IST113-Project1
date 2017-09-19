@@ -33,16 +33,23 @@ body{
 	border-width: 3px;
 	
 	text-align: center ;
+	display:inline-block; 
+	vertical-align:middle; /*http://phrogz.net/CSS/vertical-align/index.html a True life saver on Valign stuff */
 }
 .tiles .recipes{
+	
 	width: 100px;
-	position: absolute;
-	right: 0;
-	top: 0;
+	
 }
 .tiles .tips{
 	width: 75px;
-	position: absolute;
-	left: 0;
-	top: 0;
+	
+}
+.price{
+	width: 70px;
+	font-size: 1.55em;
+}
+.range{
+	width: 85px;
+	font-size: 1.55em;
 }
