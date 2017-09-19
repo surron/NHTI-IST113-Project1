@@ -6,23 +6,34 @@
 	</head>
 	<body>
 		<div id="tileBanner" >
-			<button class="tiles tips" >
+			<button class="tiles tips tooltip" >
 				Food for Thought
+				<span class="tooltiptext" >If you're feeling inquisitive and <br>want to know random brain food facts</span>
 			</button>
-			<button class="tiles recipes" >
-				Got Some Time?<br> Here's a Random Recipe	
+			
+			<button class="tiles recipes tooltip" >
+				Got Some Time?<br> Here's a Random Recipe
+				<span class="tooltiptext" >Randomly picks a recipe from the entire database</span>				
 			</button> <!-- apparently can't use select list in a button, as it just clicks the button instead; maybe change later for this option???? -->
-			<button class="tiles price" >
+			
+			<button class="tiles price tooltip" >
 				<$5
+				<span class="tooltiptext" style="font-size:0.5em">Generates a random recipe that costs less than five dollars</span>
 			</button>
-			<button class="tiles range" >
+			
+			<button class="tiles range tooltip" >
 				$5-$8
+				<span class="tooltiptext" style="font-size:0.5em">Generates a random recipe that costs between five & eight dollars</span>
 			</button>
-			<button class="tiles range" style="width:95px">
+			
+			<button class="tiles range tooltip" style="width:95px">
 				$9-$12
+				<span class="tooltiptext" style="font-size:0.5em">Generates a random recipe that costs between nine & twelve dollars</span>
 			</button>
-			<button class="tiles price" style="width:80px">
+			
+			<button class="tiles price tooltip" style="width:80px">
 				$12+
+				<span class="tooltiptext" style="font-size:0.5em">Generates a random recipe that costs more than twelve dollars</span>
 			</button>
 		</div> <!-- Opaque tiles banner? bar at top of page -->
 	</body>
