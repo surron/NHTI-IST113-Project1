@@ -58,17 +58,21 @@ body{
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; 
 }
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
-    color: #fff;
+	
+	border-style: solid;
+	border-color: #2e8b57;
+    background-color: #8fbc8f;
+    color: black;
+	
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
+	
     position: absolute;
     z-index: 1;
 }
