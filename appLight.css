@@ -1,0 +1,45 @@
+.light{
+	width: 500px;
+	height: 200px;
+	border-radius: 50px;
+	background-color: lightblue;
+	box-sizing: border-box;
+	align-content: center;
+	
+	border: solid 6px darkblue;
+}
+body{
+	background-color:black;
+	display: block;
+	text-align:center;
+}
+.status{
+	width: 200px;
+	height: 100px;
+	border: 2px solid  black;
+	align-content: center;
+	text-align: center;
+	
+	background-color: lightblue;
+	color: darkblue;
+	font-size: 1.5em;
+	margin: auto;
+	
+}
+.switch{
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	background-color: white;
+	margin: 5px;
+	margin-top:10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	float: left;
+	border: solid 2px black;
+	
+}
+.WDS{
+	margin:auto;
+	width: 50%;
+}
