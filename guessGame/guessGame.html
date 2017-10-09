@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="guessGame.css"> 
+	<script src="guessGame.js"></script>
+</head>
+<body>
+	
+	<div>
+		<form  action="/action.page.php">
+		<fieldset  class="fields">
+			Number to be Guessed:<br>
+			<input type="password" id="gnum" ><br>
+		
+			My Guess:<br>
+			<input type="text" id="guessed" ><br><br>
+	
+		
+	
+			<input type="button" value="Submit Guess" onclick="guessing()">
+			<input type="reset" value="Play Again" onclick="resetGame()">
+			</fieldset>
+		</form><br>
+		
+		
+		
+		<div class="info">
+		<span id="instruct" class="display">Player One enters a number in the first field & the second player tries to guess the number in the second field.<br> 
+		This box will display if you're too high, low, or if you're correct in your guess, as well as the number of tries.<br> The "Play Again" button will reset all saved information.</span><br>
+		<span>Attempts: </span>
+		<span id="current" class="display">0</span>
+		</div>
+	</div>
+	
+	
+</body>
