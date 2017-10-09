@@ -1,0 +1,11 @@
+.info{
+	display:block;
+	border: solid 2px black;
+	height: 120px;
+	width: 300px;
+	overflow:auto;
+}
+.fields{
+	border: solid 2px black;
+	width: 225px;
+}
