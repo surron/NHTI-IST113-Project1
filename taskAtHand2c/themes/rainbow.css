@@ -1,0 +1,76 @@
+ #app
+{
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 10s ease infinite;
+-z-animation: rainbow 10s ease infinite;
+-o-animation: rainbow 10s ease infinite;
+  animation: rainbow 10s ease infinite;
+  
+}
+/* thanks to codepen for the keyframes so that rainbow actually worked*/
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow2{
+	20%{color: red;}
+	30%{color: orange;}
+	43%{color: yellow;}
+	67%{color: green;}
+	88%{color: blue;}
+	100%{color: purple;}	
+}
+/* Internet Explorer */
+@-ms-keyframes rainbow2{
+	20%{color: red;}
+	30%{color: orange;}
+	43%{color: yellow;}
+	67%{color: green;}
+	88%{color: blue;}
+	100%{color: purple;}	
+}
+
+/* Standar Syntax */
+@keyframes rainbow2{
+		20%{color: red;}
+	30%{color: orange;}
+	43%{color: yellow;}
+	67%{color: green;}
+	88%{color: blue;}
+	100%{color: purple;}	
+}
+#app>header,
+#app>footer
+{
+    background-color: #000000;
+	/* Chrome, Safari, Opera */
+  -webkit-animation: rainbow2 6s ease infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow2 6s ease infinite;
+  
+  /* Standar Syntax */
+  animation: rainbow2 6s ease infinite; 
+}
+.task, #new-task-name{
+	background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+}

@@ -1,0 +1,12 @@
+ #app
+{
+    -webkit-animation: spin 30s infinite linear;
+}
+@-webkit-keyframes spin {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+}
