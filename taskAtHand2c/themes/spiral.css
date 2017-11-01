@@ -1,6 +1,6 @@
  #app
 {
-    -webkit-animation: spin 30s infinite linear;
+    -webkit-animation: spin 50s infinite linear;
 }
 @-webkit-keyframes spin {
 		from {
