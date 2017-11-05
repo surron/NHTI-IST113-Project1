@@ -1,6 +1,6 @@
  #app
 {
-background: linear-gradient(270deg, magenta, red, orange, yellow, limegreen, green, cyan, blue, indigo, purple );
+background: linear-gradient(125deg, magenta, red, orange, yellow, limegreen, green, cyan, blue, indigo, purple );
 background-size: 1800% 1800%;
 /*#ff2401, #e81d1e, #e8b71e, #e3e81e, #1de841, #1ddde9, #2b1de9, #dd00f4, #dd00f4*/
 -webkit-animation: rainbow 10s ease infinite;
