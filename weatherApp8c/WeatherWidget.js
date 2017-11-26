@@ -1,7 +1,7 @@
 function WeatherWidget($widget){
 	
 	this.update = function(){
-		
+		$('.error', $widget).hide();
 		$('.results', $widget).hide();
 		$('.loading', $widget).show();
 		$.when(getLocation()).then(getCurrentWeather());
@@ -32,7 +32,7 @@ function WeatherWidget($widget){
 		});
 		
 		$('.loading', $widget).fadeOut(function(){ $('.results', $widget).fadeIn();});
-		$('.error', $widget).hide();
+		
 	}
 	
 	function getLocation(){

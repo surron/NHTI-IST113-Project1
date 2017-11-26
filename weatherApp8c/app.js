@@ -17,6 +17,7 @@ function MyApp()
 		var $weadiv = $('#weather-widget');
 		WeatherWidget = new WeatherWidget($weadiv);
 		
+		$(".error", $weadiv).show();
 		$('#getWeather').on('click', function(){WeatherWidget.update();});
 		
 		$("#app>header").append(version);
