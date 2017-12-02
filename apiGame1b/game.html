@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlackJack API Game</title>
+		<link href="game.css" rel="StyleSheet" />
+		<script src="lib/jquery-3.2.1.min.js"></script>
+		<script src="game.js"></script>
+	</head>
+	<body>
+	
+		<header>
+			<h1> BlackJack API Game</h1>
+		</header>
+		<div id='app'>
+			<div id='main'>
+					<div id='game-controls'>
+						<ul>
+							<li>Current Bank:<br>$<span id='currentBank'></span></li>
+							<li>Current Bet Pool:<br>$<span id='betPool'></span></li>
+						</ul>
+						<div>
+							<button id='initiate-game' class='block'>Start a Game of BlackJack</button>
+						</div>
+						<div>
+							<button id='fold' class='hidden'>Fold Hand</button>
+							<button id='drawCard' class='hidden'>Draw Another Card</button>
+							<button id='bet100' class='hidden'>Bet $100</button>
+							<button id='bet500' class='hidden'>Bet $500</button>
+							<button id='bet1000' class='hidden'>Bet $1,000</button>
+							<button id='bet5000' class='hidden'>Bet $5,000</button>
+						</div>
+					</div>
+					<div id='player-controls'>
+						<div>Dealer Hand Value: <span id='dealerScore'></span></div>
+						<div>Player Hand Value: <span id='playerScore'></span></div>
+						<button id='EndRound' class='hidden'>Stay (End Round)</button>
+					</div>
+					
+				<div id='play-area'>
+					<div class='hand' id='dealer-hand'>
+						<p>Dealer's Hand</p>
+					</div>
+					<br>
+					<div class='hand' id='player-hand'>
+						<p>Player's Hand</p>
+					</div>
+				</div>	
+			</div>
+		
+		
+		</div>
+		<footer>
+			<div class='error'>
+				Instructions/Error Information: <span>None</span>
+			</div>
+		</footer>
+	</body>
+</html>

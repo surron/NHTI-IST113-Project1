@@ -1,0 +1,72 @@
+body{
+	background-color: darkgreen;
+	text-align:center;
+	
+}
+#main{
+	text-align:center;
+	margin:auto;
+	
+}
+.hand{
+	text-align:center;
+	margin-top:10px;
+    margin: auto;
+    padding: 10px;
+    width: 60%;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: limegreen;
+    color: black;
+
+	
+}
+#app{
+	text-align: center;
+	height:100%;
+	width:100%;
+}
+.hidden{
+	display:none;
+}
+.block{
+	display:block;
+}
+footer{
+	position:absolute;
+	bottom:0;
+	left:0;
+	
+}
+.error{
+	border: 1px solid black;
+	background-color:magenta;
+	color:blue;
+	padding:5px;
+}
+#game-controls{
+	float:left;
+	height:80%;
+	min-height:80%;
+	width:15%;
+	padding: 10px;
+	background-color:limegreen;
+	border-radius: 8px;
+    border: 1px solid black;
+	
+}
+#player-controls{
+	float:right;
+	height:80%;
+	min-height:80%;
+	width:15%;
+	padding: 10px;
+	background-color:limegreen;
+	border-radius: 8px;
+    border: 1px solid black;
+	
+}
+ul,li{
+	list-style-type:none;
+	text-align:left;
+}
