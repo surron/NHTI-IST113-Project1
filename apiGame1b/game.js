@@ -5,6 +5,10 @@ function BlackJackGame(){
 	var playerBank = 50000;
 	var drawn = 0;
 	var betPool = 0;
+	var playerFaceVal = 0;
+	var dealerFaceVal = 0;
+	var dealerHandSize = 0;
+	var playerHandSize = 0;
 	var DeckData;
 	
 	
@@ -23,7 +27,6 @@ function BlackJackGame(){
 	}
 	
 	function StartGame(){
-		//$('.error>span').text('None');
 		$('#currentBank').text(playerBank);
 		$('#betPool').text(betPool);
 		DeckData = null;
@@ -38,6 +41,10 @@ function BlackJackGame(){
 			playerScore = 0;
 			drawn = 0;
 			betPool = 0;
+			playerFaceVal = 0;
+			dealerFaceVal = 0;
+			dealerHandSize = 0;
+			playerHandSize = 0;
 		
 			InitialHand(data);
 		})
@@ -67,19 +74,15 @@ function BlackJackGame(){
 			
 			$('#player-hand').html('<img src="'+data.cards[drawn].image+'"/>');
 			CalculatePlayerHandValue(data);
-			drawn++;
 			
 			$('#player-hand').append('<img src="'+data.cards[drawn].image+'"/>');
 			CalculatePlayerHandValue(data);
-			drawn++;
 			
 			$('#dealer-hand').html('<img src="'+data.cards[drawn].image+'"/>');
 			CalculateDealerHandValue(data);
-			drawn++;
 			
 			$('#dealer-hand').append('<img src="'+data.cards[drawn].image+'"/>');
 			CalculateDealerHandValue(data);
-			drawn++;
 			
 			TheZone();
 		})
@@ -89,11 +92,19 @@ function BlackJackGame(){
 		});
 		
 	}
+	function ooze(){
+		alert("You've Won the Hand");
+		StartGame();
+	}
+	function booze(){
+		alert("You've Lost the Hand");
+			StartGame();
+	}
 	
 	function CalculatePlayerHandValue(data){
-		if(data.cards[drawn].value === "KING"){playerScore+= 10;}
-		else if(data.cards[drawn].value === "QUEEN"){playerScore+= 10;}
-		else if(data.cards[drawn].value === "JACK"){playerScore+= 10;}
+		if(data.cards[drawn].value === "KING"){playerScore+= 10;playerFaceVal+= 3;}
+		else if(data.cards[drawn].value === "QUEEN"){playerScore+= 10;playerFaceVal+= 2;}
+		else if(data.cards[drawn].value === "JACK"){playerScore+= 10;playerFaceVal+= 1;}
 		else if(data.cards[drawn].value === "ACE")
 		{
 			playerScore+= 11;
@@ -101,13 +112,15 @@ function BlackJackGame(){
 		}
 		else{playerScore+= Number(data.cards[drawn].value);}
 		$('#playerScore').text(playerScore);
+		drawn++;
+		playerHandSize++;
 		Bust();
 	}
 	
 	function CalculateDealerHandValue(data){
-		if(data.cards[drawn].value === "KING"){dealerScore+= 10;}
-		else if(data.cards[drawn].value === "QUEEN"){dealerScore+= 10;}
-		else if(data.cards[drawn].value === "JACK"){dealerScore+= 10;}
+		if(data.cards[drawn].value === "KING"){dealerScore+= 10;dealerFaceVal+= 3;}
+		else if(data.cards[drawn].value === "QUEEN"){dealerScore+= 10;dealerFaceVal+= 2;}
+		else if(data.cards[drawn].value === "JACK"){dealerScore+= 10;dealerFaceVal+= 1;}
 		else if(data.cards[drawn].value === "ACE")
 		{
 			dealerScore+= 11;
@@ -115,6 +128,8 @@ function BlackJackGame(){
 		}
 		else{dealerScore+= Number(data.cards[drawn].value);}
 		$('#dealerScore').text(dealerScore);
+		drawn++;
+		dealerHandSize++;
 		Bust();
 	}
 	
@@ -135,30 +150,53 @@ function BlackJackGame(){
 		if(playerScore > 21){
 			$('.error>span').text("You've gone over 21, you bust with a "+playerScore+"!\nStarting next hand...");
 			GameOver();
-			alert("You've Lost the Hand");
-			StartGame();
+			booze();
 		}
 		else if(dealerScore > 21){
-			$('.error>span').text("Dealer has busted with a "+dealerScore+"! You've won $" +(betPool*2)+" this Hand!");
 			playerBank+= (betPool*2);
-			StartGame();
+			$('.error>span').text("Dealer has busted with a "+dealerScore+"! You've won $" +(betPool*2)+" this Hand!");
+			ooze();
 		}
 	}
 	function EndRound(){
-		if(playerScore > dealerScore){
+		if((playerScore > dealerScore)&&(playerScore < 22)){
 			$('.error>span').text("You've won $" +(betPool*2)+" this Hand! "+playerScore+" vs "+dealerScore);
 			playerBank+= (betPool*2);
+			alert("You've Won the Hand");
 		}
-		else if(playerScore < dealerScore){
+		else if((playerScore < dealerScore)&&(dealerScore < 22)){
 			$('.error>span').text("You've lost this Hand! "+playerScore+" vs "+dealerScore);
 			alert("You've Lost the Hand");
 			GameOver();
 		}
-		/*else if(playerScore === dealerScore){
-			determine facecards for winner
-		}*/
+		else if(playerScore == dealerScore){
+			if(playerScore == 21){BlackJackCheck();}
+			else if (playerFaceVal > dealerFaceVal){
+				$('.error>span').text("You've won the Tie for $" +(betPool*2)+" this Hand!  ");
+				playerBank+= (betPool*2);
+				alert("You've Won the Hand");
+			}
+			else if (playerFaceVal < dealerFaceVal){
+				$('.error>span').text("You've lost the Tie this Hand! ");
+				alert("You've Lost the Hand");
+				GameOver();
+			}
+			//suit val for none facecard ties
+		}
 		GameOver();
 		StartGame();
+	}
+	function BlackJackCheck(){
+		if((playerHandSize == 2)&&(playerFaceVal > dealerFaceVal)){
+			$('.error>span').text("You've won the Tie with BlackJack for $" +(betPool*2.5)+" this Hand!  ");
+				playerBank+= (betPool*2.5);
+				alert("You've Won the Hand with BlackJack");
+		}
+		else if((dealerHandSize == 2)&&(dealerFaceVal > playerFaceVal)){
+			$('.error>span').text("You've lost the Tie with BlackJack this Hand! ");
+				alert("You've Lost the Hand to a dealer BlackJack");
+				GameOver();
+		}
 	}
 	
 	function GameOver(){
@@ -183,9 +221,14 @@ function BlackJackGame(){
 			})
 			.done(function(data){
 				$('#dealer-hand').append('<img src="'+data.cards[drawn].image+'"/>');
-				CalculateDealerHandValue(data);
-				drawn++;
+				setTimeout(CalculateDealerHandValue(data),1500);
 				
+				if(dealerScore < 17){
+					DealerDraw();
+					}
+				else if (dealerScore > 16){
+					EndRound();
+				}
 				})
 				.fail(function(jqXHR, textStatus, errorThrown){
 					startError(errorThrown);
@@ -238,17 +281,11 @@ function BlackJackGame(){
 		}
 	});
 	$('#EndRound').on('click',function(){
-		if(dealerScore < 17){
+		if (dealerScore > playerScore){EndRound();}
+		else if(dealerScore < 17){
 			DealerDraw();
-			if(dealerScore < 17){
-				DealerDraw();
-				if(dealerScore < 17){
-					DealerDraw();
-					}
-				}
 			}
-		
-		EndRound();
+		else if(dealerScore == playerScore){EndRound();}
 	});
 	$('#drawCard').on('click',function(){
 		$.ajax({
@@ -258,8 +295,8 @@ function BlackJackGame(){
 		.done(function(data)
 		{
 			$('#player-hand').append('<img src="'+data.cards[drawn].image+'"/>');
-			CalculatePlayerHandValue(data);
-			drawn++;
+			setTimeout(CalculatePlayerHandValue(data),1500);
+		
 			$('#bet100').hide();
 			$('#bet500').hide();
 			$('#bet1000').hide();
