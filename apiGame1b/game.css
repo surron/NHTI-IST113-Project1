@@ -71,3 +71,20 @@ ul,li{
 	list-style-type:none;
 	text-align:left;
 }
+button{
+	display:block;
+	background: #DDA0DD;
+	color:black;
+	width:150px;
+	height: 50px;
+	margin:1px;
+	padding:1px;
+	border: 2px solid black;
+	font-size:1em;
+	border-radius: 10px;
+	text-decoration:none;
+}
+button:active, button:hover{
+	background:#EE82EE;
+	color:black;
+}
